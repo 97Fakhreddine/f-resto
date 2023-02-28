@@ -1,10 +1,11 @@
+// @ts-nocheck
 import { HEIGHT, View, WIDTH } from "@/ui";
 import React from "react";
 import Modal from "react-native-modal";
 class BottomPopUp extends React.Component {
   state: { isOpen: boolean };
   constructor(
-    props: {} | Readonly<{ ComponentProps: any; onTouchOutside: any }>
+    props: { componentProps: JSX.Element; } | any
   ) {
     super(props);
     this.state = {
@@ -23,7 +24,7 @@ class BottomPopUp extends React.Component {
 
   render() {
     const { isOpen } = this.state;
-    const { ComponentProps }: any = this.props;
+    const ComponentProps: JSX.Element = this.props.componentProps;
     const deviceHeight = HEIGHT;
     const deviceWidth = WIDTH;
     return (

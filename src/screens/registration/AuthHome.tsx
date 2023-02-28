@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from "react";
 
 import { SvgXml } from "react-native-svg";
@@ -10,7 +11,7 @@ import BottomPopUp from "./components/BottomPopUp";
 
 
 const AuthHome: React.FC = () => {
-  let popUpRef = React.createRef();
+  let popUpRef: any = React.createRef();
   const [wichComponentToRender, setComponentToRender] = useState<
     "login" | "signup"
   >("login");
@@ -18,14 +19,13 @@ const AuthHome: React.FC = () => {
     setComponentToRender(componentName);
     popUpRef.show();
   };
-  const onClosePopUp = () => {
-    popUpRef.close();
-  };
+  // const onClosePopUp = () => {
+  //   popUpRef.close();
+  // };
 
-  const renderComponent: JSX.Element
-    | any = () => {
-      return <AuthModal componentName={wichComponentToRender} />;
-    };
+  const renderComponent: any = () => {
+    return <AuthModal componentName={wichComponentToRender} />;
+  };
 
   return (
     <ScrollView className="w-full h-full">
@@ -114,8 +114,7 @@ const AuthHome: React.FC = () => {
       </View>
       <BottomPopUp
         ref={(target: any) => (popUpRef = target)}
-        // onTouchOutside={onClosePopUp}
-        ComponentProps={renderComponent}
+        componentProps={renderComponent}
       ></BottomPopUp>
     </ScrollView>
   );

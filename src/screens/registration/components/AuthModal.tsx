@@ -13,13 +13,11 @@ import SignUp from "./SignUp";
 import colors from "@/ui/theme/colors";
 
 
-const FirstRoute = () => (
-  <ScrollView className="w-full h-full" style={[{ backgroundColor: colors.white }]}><SignUp
-  /></ScrollView>
-);
-const SecondRoute = () => (
-  <ScrollView className="w-full h-full" style={[{ backgroundColor: colors.white }]}><Login /></ScrollView>
-);
+const FirstRoute = () => <SignUp />
+
+const SecondRoute = () => <Login />
+
+
 
 
 const AuthModal = (props: { componentName: string }) => {
@@ -45,7 +43,7 @@ const AuthModal = (props: { componentName: string }) => {
       navigationState={{ index, routes }}
       onIndexChange={setIndex}
       renderScene={renderScene}
-      initialLayout={{ width: Dimensions.get('window').width }}
+      initialLayout={{ width: WIDTH }}
       style={styles.tabView}
       renderTabBar={renderTabBar}
     />

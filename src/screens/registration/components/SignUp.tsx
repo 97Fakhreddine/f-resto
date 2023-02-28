@@ -41,39 +41,39 @@ const SignUp = ({ onSubmit = () => {
   }
 
   return (
-
-    <View className="flex-1 justify-center p-4 w-full h-full" style={{
-      backgroundColor: colors.white,
-    }}>
-      <ControlledInput
-        testID="name-input"
-        control={control}
-        name="name"
-        label="Full Name"
-        placeholder='Enter your full name'
-      />
-      <ControlledInput
-        testID="email-input"
-        control={control}
-        name="email"
-        label="Email"
-        placeholder='Eg namaemail@email.com'
-      />
-      <ControlledInput
-        testID="password-input"
-        control={control}
-        name="password"
-        label="Password"
-        secureTextEntry={true}
-        placeholder='**** **** ****'
-      />
-      <Button
-        testID="login-button"
-        label="Login"
-        onPress={handleSubmit(onSubmit)}
-        variant={!isValidForm() ? 'secondary' : 'primary'}
-      />
-    </View>
+    <ScrollView className="w-full h-full" style={[{ backgroundColor: colors.white }]}>
+      <View className="flex-1 justify-center p-4 w-full h-full" style={{
+      }}>
+        <ControlledInput
+          testID="name-input"
+          control={control}
+          name="name"
+          label="Full Name"
+          placeholder='Enter your full name'
+        />
+        <ControlledInput
+          testID="email-input"
+          control={control}
+          name="email"
+          label="Email"
+          placeholder='Eg namaemail@email.com'
+        />
+        <ControlledInput
+          testID="password-input"
+          control={control}
+          name="password"
+          label="Password"
+          secureTextEntry={true}
+          placeholder='**** **** ****'
+        />
+        <Button
+          testID="login-button"
+          label="Login"
+          onPress={handleSubmit(onSubmit)}
+          variant={!isValidForm() ? 'secondary' : 'primary'}
+        />
+      </View>
+    </ScrollView>
   );
 };
 

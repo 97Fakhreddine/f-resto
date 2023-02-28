@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
 import { Button, colors, ControlledInput, Text, View } from '@/ui';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const schema = z.object({
   email: z
@@ -34,31 +35,33 @@ const Login = ({ onSubmit = () => { } }: Props) => {
   }
 
   return (
-    <View className="flex-1 justify-center p-4 w-full" style={{
+    <ScrollView className='h-full w-full' style={{
       backgroundColor: colors.white,
     }}>
-      <ControlledInput
-        testID="email-input"
-        control={control}
-        name="email"
-        label="Email"
-        placeholder='Eg namaemail@email.com'
-      />
-      <ControlledInput
-        testID="password-input"
-        control={control}
-        name="password"
-        label="Password"
-        secureTextEntry={true}
-        placeholder='**** **** ****'
-      />
-      <Button
-        testID="login-button"
-        label="Login"
-        onPress={handleSubmit(onSubmit)}
-        variant={!isValidForm() ? 'secondary' : 'primary'}
-      />
-    </View>
+      <View className="flex-1 justify-center p-4 w-full" >
+        <ControlledInput
+          testID="email-input"
+          control={control}
+          name="email"
+          label="Email"
+          placeholder='Eg namaemail@email.com'
+        />
+        <ControlledInput
+          testID="password-input"
+          control={control}
+          name="password"
+          label="Password"
+          secureTextEntry={true}
+          placeholder='**** **** ****'
+        />
+        <Button
+          testID="login-button"
+          label="Login"
+          onPress={handleSubmit(onSubmit)}
+          variant={!isValidForm() ? 'secondary' : 'primary'}
+        />
+      </View>
+    </ScrollView>
   );
 };
 export default Login
