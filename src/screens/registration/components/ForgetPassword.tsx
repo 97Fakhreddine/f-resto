@@ -52,7 +52,7 @@ const ForgetPassword = () => {
           />
           <Pressable onPress={(e) => redirectToSignIn(e)}>
             <Text className="text-sm font-medium text-start font-inter ml-2" style={{ color: colors.neutral[400] }}>
-              Remember the password? 
+              Remember the password?
               <Text style={{ color: colors.primary[400] }}> Sign in</Text>
             </Text>
           </Pressable>

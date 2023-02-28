@@ -3,10 +3,10 @@ import React from 'react';
 import { useAuth } from '@/core';
 
 import type { FormType } from './login-form';
-import Success from './components/Success';
+// import Success from './components/Success';
 import ForgetPassword from './components/ForgetPassword';
 // import { LoginForm } from './login-form';
-// import AuthHome from './AuthHome';
+import AuthHome from './AuthHome';
 
 export const Login = () => {
   const signIn = useAuth.use.signIn();
@@ -20,5 +20,6 @@ export const Login = () => {
   // a new password'
   //   btnLabel='Back Email'
   // />;
-  return <ForgetPassword />
+  return <AuthHome />
+  // return <ForgetPassword />
 };

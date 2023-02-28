@@ -28,7 +28,7 @@ const AuthHome: React.FC = () => {
   };
 
   return (
-    <ScrollView className="w-full h-full">
+    <ScrollView className="w-full h-screen">
       <View style={{
         display: 'flex',
         justifyContent: 'space-between',
